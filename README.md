@@ -16,7 +16,7 @@ Extender a usabilidade de um campo de texto significa:
 ## Pré-requisitos
 
 1. Ter o node instalado na maquina;
-1. Ter a porta 3000, disponível para excução do projeto (caso não tenha, favor alterar a porta no aquivo `server.js`)
+1. Ter a porta `3000`, disponível para excução do projeto (caso não tenha, favor alterar a porta no aquivo `server.js`)
 
 ## Execução:
 
