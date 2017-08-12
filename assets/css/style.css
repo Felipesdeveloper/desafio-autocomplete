@@ -1,0 +1,251 @@
+/* Font */
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');*/
+
+/* Reset */
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+  box-sizing: border-box;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background-color: #f0f1f3;
+  font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+strong {
+    font-weight: 600;
+}
+
+
+/* fim Reset */
+
+/* Prescricao */
+.prescricao-container{
+  width: 60vw;
+  padding: 15px;
+}
+#header {
+    padding: 10px 0 20px;
+}
+#header .title{
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+/* Campo Busca */
+textarea {
+	width: 100%;
+	background: #fff;
+	border: 0;
+	border-radius: 5px;
+	color: #000;
+}
+textarea:focus{
+	box-shadow: 1px 1px 2px #c2c2c2;
+}
+.prescricao-container textarea{
+  padding: 40px;
+	min-height: 450px;
+	overflow: hidden;
+}
+#autocomplete-container textarea{
+	padding: 30px 40px;
+}
+.form-prescricao, .autocomplete-form-prescricao{
+  position: relative;
+}
+.form-prescricao::before, .autocomplete-form-prescricao::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 2;
+
+}
+.form-prescricao::before{
+  top: 30px;
+}
+.autocomplete-form-prescricao::before{
+	top: 20px;
+}
+.form-prescricao.busca::before{
+  background: url('/assets/imgs/icones-memed.jpg') no-repeat -120px 0px;
+}
+.form-prescricao.texto-livre::before, .autocomplete-form-prescricao.texto-livre::before {
+  background: url('/assets/imgs/icones-memed.jpg') no-repeat -78px 0px;
+}
+
+
+/* autocomplete */
+#autocomplete-container {
+  background: #fff;
+  border: 1px solid #ececec;
+  box-shadow: 1px 1px 2px #c2c2c2;
+  margin: 0 10px;
+	color: #5b5b5c;
+	width: 98%;
+	position: absolute;
+	top: 150px;
+	z-index: 3;
+	display: none;
+}
+#autocomplete-container.is-show{
+	display: block;
+}
+#lista-medicamentos .medicamento.is-hidden{display: none;}
+#autocomplete-header{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+	-webkit-justify-content: center; /* Safari 6.1+ */
+  justify-content: center;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 5px 10px;
+	position: relative;
+}
+#autocomplete-header ul {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+#autocomplete-header a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #616064;
+    margin: 5px;
+    border-radius: 5px;
+}
+#autocomplete-header a.active{
+    background: #616064;
+    color: #fff;
+}
+
+#autocomplete-header .load {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    border: 2px solid #ededed;
+    border-radius: 50%;
+}
+#autocomplete-header .load::before {
+    content: "...";
+    text-align: center;
+    display: block;
+    padding-top: 1px;
+    color: #d5d5d5;
+}
+#autocomplete-header .load.is-load {
+    border-left: 2px solid #ededed;
+    border-right: 2px solid #d6d5d5;
+    border-radius: 50%;
+		-webkit-animation: isLoad 1s infinite linear;
+		-moz-animation: isLoad 1s infinite linear;
+		-o-animation: isLoad 1s infinite linear;
+		 animation: isLoad 1s infinite linear;
+}
+#autocomplete-header .load.is-load::before{
+	content: "";
+}
+
+@keyframes isLoad {
+  0% {
+    transform: rotate(0deg);
+  }
+	50% {
+		transform: rotate(180deg);
+	}
+  100% {
+  	transform: rotate(360deg);
+  }
+}
+
+
+#lista-medicamentos{
+	border-bottom: 1px solid #e6e6e6;
+}
+#lista-medicamentos .medicamento {
+    display: -webkit-flex;
+    display: flex;
+		align-items: center;
+		padding: 10px 30px;
+}
+#lista-medicamentos .medicamento:hover {
+    background: #f0f1f3;
+}
+
+
+.medicamento > * {
+    padding: 10px;
+}
+.medicamento .icone {
+    width: 40px;
+		height: 40px;
+}
+.icone.referencia {
+    background: url('/assets/imgs/icones-memed.jpg') no-repeat 0px 5px;
+}
+.icone.generico{
+	background: url('/assets/imgs/icones-memed.jpg') no-repeat 0px 5px;
+}
+.icone.generico {
+    background: url('/assets/imgs/icones-memed.jpg') no-repeat -38px 5px;
+}
+
+.medicamento .nome {
+    width: 65%;
+}
+
+.medicamento .fabricante, .medicamento .preco{
+    width: 15%;
+}
+.medicamento  .preco{
+	text-align: right;
+}
+.preco-minimo {
+    font-weight: 600;
+}
+
+.sub-titulo {
+    color: #c2c3c3;
+}
+
+
+.powered{
+		text-align: right;
+		color: #a1a0a1;
+    padding: 10px;
+}
+.powered .memed-powered{
+	color: #000;
+}

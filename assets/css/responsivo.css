@@ -1,0 +1,39 @@
+@media (min-width: 550px) and (max-width: 720px){
+  .prescricao-container {
+    width: 85vw;
+  }
+
+  #lista-medicamentos .medicamento{
+    flex-flow: row wrap;
+  }
+
+  .icone.referencia {
+    display: none;
+  }
+
+  .medicamento .nome{
+    width: 60%;
+  }
+
+  .medicamento .fabricante, .medicamento .preco {
+    width: 20%;
+  }
+}
+
+@media (max-width: 549px){
+  .prescricao-container {
+    width: 85vw;
+  }
+
+  #lista-medicamentos .medicamento{
+    flex-flow: row wrap;
+  }
+
+  .medicamento .nome{
+    width: 70%;
+  }
+
+  .medicamento .fabricante, .medicamento .preco {
+    width: 50%;
+  }
+}
