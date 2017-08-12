@@ -23,5 +23,5 @@ Extender a usabilidade de um campo de texto significa:
 Para execução do desafio basta seguir os passos:
 
 1. De um `git clone` neste repositório;
-2. Na pasta do projeto execute o comando `npm install`;
+2. Abra a pasta `desafio-autocomplete` execute o comando `npm install`;
 3. `npm start` pronto o projeto já está em execução;
